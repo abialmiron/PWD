@@ -12,4 +12,4 @@ define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].$directorio);
 define('STRUCTURE_PATH', ROOT_PATH.'Vista/Templates/');
 $_SESSION['ROOT'] = ROOT_PATH;
 $ROOT = ROOT_PATH; // Agrega esta línea para definir la variable $ROOT
-include_once(ROOT_PATH.'vista/util/funciones.php');
+include_once(ROOT_PATH.'vista/utiles/funciones.php');
