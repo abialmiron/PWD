@@ -1,37 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 8</title>
-</head>
-
-<body>
-    <form name="form8" method="post" action="formAccion.php">
-        <h2> Para calcular la tarifa ingrese los siguientes datos</h2>
-        <table>
-            <tr>
-                <td>
-                    <label for="edad">Edad</label>
-                    <input type="number" id="edad" name="edad" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="estudia">Estudia</label>
-                    <input type="radio" name="estudia" value="si" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="estudia">No estudia</label>
-                    <input type="radio" name="estudia" value="no">
-                </td>
-            </tr>
-        </table>
-        <input type="submit" id="submit" value="Enviar">
-    </form>
-</body>
-
-</html>
+<?php
+include('../../configuracion.php');
+include('../Templates/head.php');
+?>
+<main class="index">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Para calcular la tarifa ingrese los siguientes datos</h5>
+                        <form name="form" method="post" action="formAccion.php">
+                            <div class="form-group">
+                                <div class="mb-3">
+                                    <label class="fw-semibold" for="edad">Edad</label>
+                                    <input class="form-control" type="number" id="edad" name="edad" required>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <label for="estudia">Estudia</label>
+                                        <input class="form-check-input" type="radio" name="estudia" value="si" required>
+                                    </div>
+                                    <div class="form-check">
+                                        <label for="estudia">No estudia</label>
+                                        <input class="form-check-input" type="radio" name="estudia" value="no" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center p-2">
+                                <input type="submit" id="submit" class="btn btn-primary" value="Enviar">
+                                <a class="btn btn-secondary" href="../../">Volver <a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<?php
+include('../Templates/footer.php');
+?>

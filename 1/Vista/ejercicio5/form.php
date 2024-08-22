@@ -1,58 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 5</title>
-    <link rel="stylesheet" href="../Estructura/css/styles.css">
-</head>
-
-<body>
-    <h2>Ingrese sus datos personales</h2>
-
-    <form name="form" method="get" action="formAccion.php">
-        <div class="datosPersonales">
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" minlength="2" required>
-        </div>
-        <div class="datosPersonales">
-            <label for="apellido">Apellido</label>
-            <input type="text" name="apellido" id="apellido" minlength="2" required>
-        </div>
-        <div class="datosPersonales">
-            <label for="edad">Edad</label>
-            <input type="number" name="edad" id="edad" min="0" required>
-        </div>
-        <div class="datosPersonales">
-            <label for="direccion">Dirección</label>
-            <input type="text" name="direccion" id="direccion" required>
-        </div>
-
-        <div class="datosPersonales">
-            <label for="sexo">Sexo</label>
-            <select id="sexo" name="sexo">
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
-            </select>
-        </div>
-
-        <div class="datosEstudios">
-            <h2>Nivel de estudios</h2>
-            <div class="opcionesSelect">
-                <input type="radio" name="estudios" id="estudios1" value="no tiene" required> No tiene estudios
+<?php
+include('../../configuracion.php');
+include('../Templates/head.php');
+?>
+<main class="index">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ingrese sus datos personales</h5>
+                        <form name="form" method="get" action="formAccion.php">
+                            <div class="form-group">
+                                <div class="mb-3">
+                                    <label class="fw-semibold" for="nombre">Nombre</label>
+                                    <input class="form-control" type="text" name="nombre" id="nombre" minlength="2" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="fw-semibold" for="nombre">Apellido</label>
+                                    <input class="form-control" type="text" name="apellido" id="apellido" minlength="2" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="fw-semibold" for="nombre">Edad</label>
+                                    <input class="form-control" type="number" name="edad" id="edad" min="0" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="fw-semibold" for="nombre">Dirección</label>
+                                    <input class="form-control" type="text" name="direccion" id="direccion" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="fw-semibold" class for="sexo">Sexo</label>
+                                    <select class="form-select" id="sexo" name="sexo">
+                                        <option value="masculino">Masculino</option>
+                                        <option value="femenino">Femenino</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="fw-semibold" for="estudios">Nivel de estudios</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="estudios" id="estudios1" value="no tiene" required> No tiene
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="estudios" id="estudios2" value="primarios"> Estudios primarios
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="estudios" id="estudios3" value="secundarios"> Estudios secundarios
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center p-2">
+                                <input type="submit" id="submit" class="btn btn-primary" value="Enviar">
+                                <a class="btn btn-secondary" href="../../">Volver <a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="opcionesSelect">
-                <input type="radio" name="estudios" id="estudios2" value="primarios"> Estudios primarios
-            </div>
-            <div class="opcionesSelect">
-                <input type="radio" name="estudios" id="estudios3" value="secundarios"> Estudios secundarios
-            </div>
         </div>
-
-        <input type="submit" id="submit" value="Enviar">
-    </form>
-</body>
-
-</html>
+    </div>
+</main>
+<?php
+include('../Templates/footer.php');
+?>
