@@ -3,8 +3,8 @@ include('../../configuracion.php');
 include('../Templates/head.php');
 include_once '../../Control/Archivos.php';
 ?>
-<main class="p-5 text-center bg-light">
-  <div class="justify-content-md-center align-items-center ">
+<main class="index">
+  <div class="justify-content-md-center align-items-center p-4">
     <div class="card shadow  col-lg-8  mx-auto">
       <div class="card-header">
         <h3>Detalles de la pelicula</h3>
@@ -19,7 +19,6 @@ include_once '../../Control/Archivos.php';
           $carga = $objArchivo->subirArchivo($datos);
         }
         ?>
-
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Título:</strong> <?php echo $string['titulo']; ?></li>
           <li class="list-group-item"><strong>Actores:</strong> <?php echo $string['actores']; ?></li>
@@ -40,8 +39,6 @@ include_once '../../Control/Archivos.php';
       </div>
     </div>
 
-  </div>
-  </div>
   </div>
 </main>
 <?php

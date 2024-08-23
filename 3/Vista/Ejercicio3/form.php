@@ -6,6 +6,7 @@ include('../Templates/head.php');
 <main class="index">
 	<div class="justify-content-md-center align-items-center p-4">
 		<div class="card shadow col-lg-10  mx-auto">
+			<button type="button" class="btn-close position-absolute top-0 end-0" onclick="window.location.href='../../'"></button>
 			<div class="card-header text-start">
 				<h3>
 					<i class="bi bi-pencil-square fs-4"></i> Cinem@s

@@ -2,10 +2,9 @@
 include('../../configuracion.php');
 include('../Templates/head.php');
 include_once '../../Control/Archivos.php';
-
 ?>
-<main class="p-5 text-center bg-light">
-  <div class="justify-content-md-center align-items-center ">
+<main class="index">
+  <div class="justify-content-md-center align-items-center p-4">
     <div class="card shadow col-sm-8 col-md-6 col-lg-5 col-xl-4 mx-auto">
       <div class="card-header">
         <h3>Resultado</h3>
@@ -25,7 +24,6 @@ include_once '../../Control/Archivos.php';
             $carga = "<h5>Recuerde ingresar documentos .text</h5>";
           }
         }
-
         ?>
 
         <?php echo $carga ?>
@@ -34,10 +32,8 @@ include_once '../../Control/Archivos.php';
         </div>
       </div>
     </div>
-
   </div>
-  </div>
-  </div>
-  <?php
-  include('../Templates/footer.php');
-  ?>
+</main>
+<?php
+include('../Templates/footer.php');
+?>
