@@ -9,8 +9,7 @@ include('../../Templates/head.php');
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-center">Ingrese sus datos personales</h5>
-                        <form name="form" id="form" method="post" action="formAccion.php">
-                            <form name="form" method="get" action="formAccion.php">
+                            <form class="needs-validation" id="form" name="form" method="get" action="formAccion.php">
                                 <div class="form-group">
                                     <div class="mb-3">
                                         <label class="fw-semibold" for="nombre">Nombre</label>
@@ -40,7 +39,7 @@ include('../../Templates/head.php');
         </div>
     </div>
 </main>
-<script type="text/javascript" src="../../estructura/js/validaciones/ejercicio2/validacion3-4.js"></script>
+
 <?php
 include('../../Templates/footer.php');
 ?>

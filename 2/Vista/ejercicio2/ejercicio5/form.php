@@ -9,7 +9,7 @@ include('../../Templates/head.php');
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-center">Ingrese sus datos personales</h5>
-                        <form name="form" id="form" method="get" action="formAccion.php">
+                        <form class="needs-validation" name="form" id="form" method="get" action="formAccion.php">
                             <div class="form-group">
                                 <div class="mb-3">
                                     <label class="fw-semibold" for="nombre">Nombre</label>
@@ -21,7 +21,7 @@ include('../../Templates/head.php');
                                 </div>
                                 <div class="mb-3">
                                     <label class="fw-semibold" for="nombre">Edad</label>
-                                    <input class="form-control" type="number" name="edad" id="edad" min="0" required>
+                                    <input class="form-control" type="text" name="edad" id="edad" min="0" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="fw-semibold" for="nombre">Dirección</label>
@@ -59,7 +59,7 @@ include('../../Templates/head.php');
         </div>
     </div>
 </main>
-<script type="text/javascript" src="../../estructura/js/validaciones/ejercicio2/validacion5-6.js"></script>
+
 <?php
 include('../../Templates/footer.php');
 ?>

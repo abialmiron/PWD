@@ -14,7 +14,7 @@ include('../Templates/head.php');
                     </svg> Cinem@s</h5>
             </div>
             <div class="card-body">
-                <form class="row g-3 needs-validation" name="form" id="form" method="post" action="formAccion.php" novalidate>
+                <form class="row g-3 needs-validation" id="form" name="form" id="form" method="post" action="formAccion.php" novalidate>
 
                     <div class="col">
                         <!--TÍTULO-->
