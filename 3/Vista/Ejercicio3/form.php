@@ -3,8 +3,8 @@ include('../../configuracion.php');
 include('../Templates/head.php');
 ?>
 
-<main class="p-5 text-center bg-light">
-	<div class="justify-content-md-center align-items-center ">
+<main class="index">
+	<div class="justify-content-md-center align-items-center p-4">
 		<div class="card shadow col-lg-10  mx-auto">
 			<div class="card-header text-start">
 				<h3>
@@ -119,8 +119,6 @@ include('../Templates/head.php');
 				</form>
 			</div>
 		</div>
-	</div>
-	</div>
 	</div>
 
 </main>

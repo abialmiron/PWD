@@ -13,7 +13,7 @@ include('Vista/Templates/head.php');
         <div class="card-body" style="background-color:#bebcbc;">
           <h5 class="card-title">Ejercicio 1</h5>
           <p class="card-text">Crea un formulario HTML para subir archivos, validando en el servidor que sean .doc o .pdf y no superen los 2 MB. Muestra un enlace al archivo si es válido o un mensaje de error si no lo es.</p>
-          <a href="Vista/ejercicio1/form.php" class="btn btn-primary btn-primaryMod">Ver</a>
+          <a href="Vista/ejercicio1/form.php" class="btn btn-primary btn-primary">Ver</a>
         </div>
       </div>
     </div>
