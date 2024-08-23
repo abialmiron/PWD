@@ -9,7 +9,7 @@ include('../Templates/head.php');
             <h3>Subir archivo (solo .text)</h3>
         </div>
         <div class="card-body">
-            <form action="accion.php" method="post" enctype="multipart/form-data" class="input-group validate" onsubmit="return validarArchivo()">
+            <form action="./formAccion.php" method="post" enctype="multipart/form-data" class="input-group validate" onsubmit="return validarArchivo()">
                 <input type="file" class="form-control" id="archivo" name="archivo">
             <div class="invalid-feedback">
              Por favor, debe ingresar un archivo.
