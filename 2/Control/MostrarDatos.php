@@ -36,7 +36,6 @@ class MostrarDatos
         <link rel='stylesheet' href='../estructura/css/bootstrap-5.3.3-dist/css/bootstrap.min.css'>
         <div class='container mt-4'>
             <div class='card p-4' style='background-color: #D8F1CF'>
-                <button type='reset' class='btn-close position-absolute top-0 end-0' aria-label='Close'></button>
                 <div class='fs-2 text-primary'>
                 La película introducida es
                 </div>

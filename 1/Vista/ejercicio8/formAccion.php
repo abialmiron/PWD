@@ -15,7 +15,7 @@ $tarifa = $obj->calcularTarifa($datos);
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-body text-center">
-                        <?php echo $resultado; ?>
+                        <?php echo $tarifa; ?>
                         <div class="text-center p2">
                             <br /><a class="btn btn-primary" href="form.php">Volver <a>
                         </div>

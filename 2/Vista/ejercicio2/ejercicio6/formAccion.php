@@ -1,17 +1,30 @@
 <?php
-include_once '../../../configuracion.php';
+include('../../../configuracion.php');
+include('../../Templates/head.php');
 
 //Obtengo los datos del formulario que encapsulé
 $datos = data_submitted();
 
-echo "<pre>";
-print_r($datos);
-echo "</pre>";
-
 //Creo instancia del objeto y proceso los datos
 $obj = new DatosPersona3();
 $cadenaDatos = $obj->datosPersonales($datos);
-
-echo $cadenaDatos;
 ?>
-<br /><a href="form.php">Volver <a>
+<main class="index">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <?php echo $cadenaDatos; ?>
+                        <div class="text-center p2">
+                            <br /><a class="btn btn-primary" href="form.php">Volver <a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<?php
+include('../../Templates/footer.php');
+?>

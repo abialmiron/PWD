@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 4</title>
-    <link rel="stylesheet" href="../estructura/css/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../estructura/css/bootstrap-icons-1.11.3/">
-
-    <script type="text/javascript" src="../estructura/js/librerias-plugins/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="../estructura/js/librerias-plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-</head>
-
-<body>
-
-    <div class="container mt-4">
+<?php
+include('../../configuracion.php');
+include('../Templates/head.php');
+?>
+<main class="index">
+    <div class="container p-2">
         <div class="card">
+            <button type="button" class="btn-close position-absolute top-0 end-0" onclick="window.location.href='../../'"></button>
+
             <div class="card-header bg-secondary-subtle border rounded-3 text-primary">
                 <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -143,7 +134,7 @@
                     </div>
 
                     <!--ENVIAR-->
-                    <div class="row justify-content-end pb-3">
+                    <div class="row justify-content-end">
                         <div class="col-6">
                             <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary" value="Enviar">Enviar</button>
@@ -155,10 +146,8 @@
             </div>
         </div>
     </div>
-</body>
-<script type="text/javascript" src="../estructura/js/validaciones/ejercicio4.js"></script>
-
-
-
-
-</html>
+    <script type="text/javascript" src="../estructura/js/validaciones/ejercicio4.js"></script>
+</main>
+<?php
+include('../Templates/footer.php');
+?>

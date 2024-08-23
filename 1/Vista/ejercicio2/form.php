@@ -9,7 +9,7 @@ include('../Templates/head.php');
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-center">Ingrese las horas de cursada por día de la materia Programación Web Dinámica</h5>
-                        <form name="form" method="get" action="formAccion.php">
+                        <form name="form" id="form" method="get" action="formAccion.php">
                             <div class="form-group">
                                 <div class="mb-3">
                                     <label class="fw-semibold" for="lunes" class="form-label">Lunes</label>
@@ -35,7 +35,7 @@ include('../Templates/head.php');
                     </div>
                     <div class="text-center p-2">
                         <input type="submit" id="submit" class="btn btn-primary" value="Enviar">
-                        <a class="btn btn-secondary" href="../../">Volver <a>
+                        <a class="btn btn-secondary" href="../../">Volver</a>
                     </div>
                 </div>
             </div>
