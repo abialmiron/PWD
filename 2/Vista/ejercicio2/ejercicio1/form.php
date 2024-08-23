@@ -9,7 +9,7 @@ include('../../Templates/head.php');
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-center">Ingresar un número</h5>
-                        <form name="form" id="form" method="post" action="formAccion.php">
+                        <form class="needs-validation" name="form" id="form" method="post" action="formAccion.php">
                             <div class="form-group">
                                 <input type="number" name="numero" id="numero" class="form-control" step="any" required>
                             </div>
@@ -24,7 +24,6 @@ include('../../Templates/head.php');
         </div>
     </div>
 </main>
-<script type="text/javascript" src="../../estructura/js/validaciones/ejercicio2/validacion1.js"></script>
 <?php
 include('../../Templates/footer.php');
 ?>
