@@ -1,6 +1,7 @@
 <?php
 include "../configuracion.php";
 
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

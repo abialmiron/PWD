@@ -28,6 +28,8 @@ spl_autoload_register(function($class_name) {
     $tps = array(
         $GLOBALS['ROOT'].'1/',
         $GLOBALS['ROOT'].'2/',
+        $GLOBALS['ROOT'].'3/'
+
     );
     $directorys = array(
         'Modelo/',
