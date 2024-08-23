@@ -8,23 +8,23 @@ class DatosPersona2
      */
     public function datosPersonales($datos)
     {
-        $nombre = $datos['nombre'];
-        $apellido = $datos['apellido'];
         $edad = $datos['edad'];
-        $direccion = $datos['direccion'];
-        $estudios = $datos['estudios'];
-        $sexo = $datos['sexo'];
 
         if ($edad >= 18) {
-            $textoEdad = "</br>Es mayor de edad";
+            $datos['mensajeEdad'] = "Es mayor de edad";
         } else {
-            $textoEdad = "</br>Es menor de edad";
+            $datos['mensajeEdad'] = "Es menor de edad";
         }
 
-        $mensaje = "Nombre: " . $nombre . "</br>Apellido: " . $apellido . "</br>Edad: " . $edad .
-            "</br>Dirección: " . $direccion . "</br>Sexo: " . $sexo . "</br>Estudios: " . $estudios .
-            "</br>" . $textoEdad . "</br>";
+        //Verifico si el array con deportes no está vacío
+        if (isset($datos['deporte'])) {
+            $colDeportes = $datos['deporte'];
+            $cadena = implode(", ", $colDeportes);
+            $datos['deporte'] = "Practica los siguientes deportes: " . $cadena;
+        } else {
+            $datos['deporte'] = "No practica ningún deporte";
+        }
 
-        return $mensaje;
+        return $datos;
     }
 }

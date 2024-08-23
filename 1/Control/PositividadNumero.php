@@ -14,11 +14,11 @@ class PositividadNumero
         $numero = $dato['numero'];
 
         if ($numero > 0) {
-            $tipoNumero = "El número es positivo<br>";
+            $tipoNumero = "El número es positivo";
         } elseif ($numero < 0) {
-            $tipoNumero = "El número es negativo<br>";
+            $tipoNumero = "El número es negativo";
         } else {
-            $tipoNumero = "El número es cero<br>";
+            $tipoNumero = "El número es cero";
         }
 
         return $tipoNumero;

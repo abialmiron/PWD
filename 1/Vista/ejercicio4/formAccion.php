@@ -8,6 +8,13 @@ $datos = data_submitted();
 //Creo instancia del objeto y proceso los datos
 $obj = new DatosPersona1();
 $cadenaDatos = $obj->datosPersonales($datos);
+
+//Extraigo los datos individualmente
+$nombre = $cadenaDatos['nombre'];
+$apellido = $cadenaDatos['apellido'];
+$edad = $cadenaDatos['edad'];
+$direccion = $cadenaDatos['direccion'];
+$mensajeEdad = $cadenaDatos['mensajeEdad'];
 ?>
 <main class="index">
     <div class="container mt-5">
@@ -15,7 +22,11 @@ $cadenaDatos = $obj->datosPersonales($datos);
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-body text-center">
-                        <?php echo $cadenaDatos; ?>
+                        Nombre: <?php echo $nombre ?><br />
+                        Apellido:<?php echo $apellido ?><br />
+                        Edad: <?php echo $edad ?><br />
+                        Dirección: <?php echo $direccion ?><br />
+                        <?php echo $mensajeEdad ?>
                         <div class="text-center p2">
                             <br /><a class="btn btn-primary" href="form.php">Volver <a>
                         </div>

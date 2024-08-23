@@ -9,11 +9,9 @@ class CuentaHoras
     public function sumarHoras($datos)
     {
         $total = 0;
-
         foreach ($datos as $horas) {
             $total += $horas;
         }
-
         $mensaje = "Cantidad total de horas en la cursada de Programación Web: " . $total;
 
         return $mensaje;

@@ -8,20 +8,14 @@ class DatosPersona1
      */
     public function datosPersonales($datos)
     {
-        $nombre = $datos['nombre'];
-        $apellido = $datos['apellido'];
         $edad = $datos['edad'];
-        $direccion = $datos['direccion'];
 
         if ($edad >= 18) {
-            $textoEdad = "</br>Es mayor de edad";
+            $datos['mensajeEdad'] = "Es mayor de edad";
         } else {
-            $textoEdad = "</br>Es menor de edad";
+            $datos['mensajeEdad'] = "Es menor de edad";
         }
 
-        $mensaje = "Nombre: " . $nombre . "</br>Apellido: " . $apellido . "</br>Edad: " . $edad . "</br>Dirección: " . $direccion .
-            "</br>" . $textoEdad . "</br>";
-
-        return $mensaje;
+        return $datos;
     }
 }

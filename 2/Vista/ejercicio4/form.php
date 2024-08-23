@@ -113,9 +113,9 @@ include('../Templates/head.php');
                             <div class="form-label fw-medium">
                                 <label class="mb-2">Restricciones de edad</label>
                             </div>
-                            <input type="radio" name="edad" id="todolospublicos" value="Todo los públicos" class="form-check-input" required><label class="etiqueta form-check-label">Todo los publicos</label>
-                            <input type="radio" name="edad" id="mayores7" value="Mayores a 7 años" class="form-check-input" required><label class="form-check-label"> Mayores a 7 años</label>
-                            <input type="radio" name="edad" id="mayores18" value="Mayores a 18 años" class="form-check-input" required><label class="form-check-label"> Mayores a 18 años</label>
+                            <input type="radio" name="restriccion" id="todolospublicos" value="Todo los públicos" class="form-check-input" required><label class="etiqueta form-check-label">Todo los publicos</label>
+                            <input type="radio" name="restriccion" id="mayores7" value="Mayores a 7 años" class="form-check-input" required><label class="form-check-label"> Mayores a 7 años</label>
+                            <input type="radio" name="restriccion" id="mayores18" value="Mayores a 18 años" class="form-check-input" required><label class="form-check-label"> Mayores a 18 años</label>
                             <div class="invalid-feedback">
                                 Campo requerido.
                             </div>
