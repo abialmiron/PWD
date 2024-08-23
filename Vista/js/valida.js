@@ -4,6 +4,11 @@
 //     return valido;
 // }, "Debe ser mayor de edad");
 
+// Método personalizado para verificar que la contraseña no sea igual al usuario
+$.validator.addMethod("distintoA", function (value, element, param) {
+    return this.optional(element) || value !== $(param).val();
+});
+
 $.validator.addMethod("formString", function (value, element) {
     var pattern = /^[a-zA-Z]+$/;
     return pattern.test(value);
@@ -52,6 +57,14 @@ $(function () {
                 required: true,
                 min: 0,
                 max: 24
+            },
+            usuario: {
+                required: true,
+            },
+            pass: {
+                required: true,
+                minlength: 8,
+                distintoA: "#usuario"
             }
         },
         //Mensajes de error
@@ -85,6 +98,14 @@ $(function () {
                 required: "<p class='text-danger'>Complete el campo.</p>",
                 min: "<p class='text-danger'>Ingrese horas válidas.</p>",
                 max: "<p class='text-danger'>Máximo 24 horas.</p>",
+            },
+            usuario: {
+                required: "<p class='text-danger'>Campo requerido.</p>"
+            },
+            pass: {
+                required: "<p class='text-danger'>Campo requerido.</p>",
+                minlength: "<p class='text-danger'>La contraseña debe tener mínimo 8 caracteres.</p>",
+                distintoA: "<p class='text-danger'>La contraseña no debe coincidir con el nombre de usuario.</p>"
             }
         },
         // Esta función realiza el bootstrap de error
@@ -105,6 +126,10 @@ $(function () {
         // Esta función desmarca el borde rojo cuando el campo es válido
         unhighlight: function (element) {
             $(element).css("border-color", "");
+        },
+        errorPlacement: function (error, element) {
+            // Inserta el mensaje de error en el contenedor específico
+            error.appendTo(element.closest('.form-floating').find('.mensaje-error'));
         }
     });
 });
