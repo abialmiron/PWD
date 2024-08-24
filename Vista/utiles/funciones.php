@@ -35,7 +35,7 @@ spl_autoload_register(function($class_name) {
         'Modelo/',
         'Modelo/conector/',
         'Control/',
-        'utils/',
+        'utiles/',
         'Test/',
     );
     //print_object($directorys) ;

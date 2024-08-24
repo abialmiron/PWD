@@ -13,7 +13,7 @@ include('../Templates/head.php');
 				</h3>
 			</div> <br />
 			<div class="card-body text-start">
-				<form id="formCine" name="formCine" id="formCine" action="./formAccion.php" method="post" class="row g-3 needs-validation" novalidate enctype="multipart/form-data" class="input-group">
+				<form name="formCine" id="form" action="./formAccion.php" method="post" class="row g-3 needs-validation" novalidate enctype="multipart/form-data" class="input-group">
 					<div class="col-md-6">
 						<label class="form-label">Titulo:</label>
 						<input type="text" name="titulo" id="titulo" class="form-control validate" required>
