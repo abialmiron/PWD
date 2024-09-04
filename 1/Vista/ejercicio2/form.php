@@ -34,7 +34,7 @@ include('../Templates/head.php');
                             </div>
                             <div class="text-center p-2">
                                 <input type="submit" id="submit" class="btn btn-primary" value="Enviar">
-                                <a class="btn btn-secondary" href="../../ejercicio2/">Volver</a>
+                                <a class="btn btn-secondary" href="../../">Volver</a>
                             </div>
                         </form>
                     </div>

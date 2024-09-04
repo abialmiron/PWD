@@ -11,11 +11,13 @@ include('../../Templates/head.php');
                         <h5 class="card-title text-center">Indique dos números para operar con ellos</h5>
                         <form name="form" id="form" method="get" action="formAccion.php">
                             <div class="form-group">
-                                <div class="d-flex justify-content-center mb-3">
+                                <div class="d-flex justify-content-center mb-1">
                                     <input class="form-control" type="number" id="num1" name="num1" required>
+                                    <div class="mensaje-error"></div>
                                     <input class="form-control" type="number" id="num2" name="num2" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" class for="sexo">Seleccione una operación matemática</label>
                                     <select class="form-select" id="operacion" name="operacion">
                                         <option value="suma">SUMA</option>

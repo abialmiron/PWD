@@ -11,21 +11,25 @@ include('../../Templates/head.php');
                         <h5 class="card-title text-center">Ingrese sus datos personales</h5>
                         <form class="needs-validation" id="form" name="form" method="post" action="formAccion.php">
                             <div class="form-group">
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Nombre</label>
                                     <input class="form-control" type="text" name="nombre" id="nombre" minlength="2" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Apellido</label>
                                     <input class="form-control" type="text" name="apellido" id="apellido" minlength="2" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Edad</label>
                                     <input class="form-control" type="number" name="edad" id="edad" min="0" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Dirección</label>
                                     <input class="form-control" type="text" name="direccion" id="direccion" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
                             </div>
                             <div class="text-center p-2">

@@ -1,20 +1,14 @@
-//Estos son metodos de validación, acá se pueden agregar validaciones más complejas.
-// $.validator.addMethod("formEdad", function (value, element) {
-//     var valido = value > 18;
-//     return valido;
-// }, "Debe ser mayor de edad");
-
 // Método personalizado para verificar que la contraseña no sea igual al usuario
 $.validator.addMethod("distintoA", function (value, element, param) {
     return this.optional(element) || value !== $(param).val();
 });
 
-$.validator.addMethod("formString", function (value, element) {
-    var pattern = /^[a-zA-Z]+$/;
-    return pattern.test(value);
-}, "El campo debe tener un solo caracteres (sin números)");
+$.validator.addMethod("letrasNumeros", function (value, element) {
+    return this.optional(element) || /^[a-zA-Z0-9]+$/.test(value);
+});
 
 $(function () {
+
     $("#form").validate({
         rules: {
             //Reglas de validación
@@ -23,15 +17,21 @@ $(function () {
             },
             edad: {
                 required: true,
-                // formEdad: true
+                digits: true,
+                min: 0,
+                max: 120
             },
             nombre: {
                 required: true,
-                formString: true
             },
             apellido: {
                 required: true,
-                formString: true
+            },
+            direccion: {
+                required: true,
+            },
+            estudios: {
+                required: true,
             },
             hsLunes: {
                 required: true,
@@ -63,73 +63,82 @@ $(function () {
             },
             pass: {
                 required: true,
+                letrasNumeros: true,
                 minlength: 8,
                 distintoA: "#usuario"
             }
         },
         //Mensajes de error
         messages: {
-            numero: "Debe ingresar un número.",
-            edad: "Debe completar este campo.",
-            nombre: "Debe ingresar un nombre.",
-            apellido: "Debe ingresar un apellido.",
-            direccion: "Debe ingresar una dirección.",
+            numero: {
+                required: "<p class='text-danger'>Debe ingresar un número</p>",
+            },
+            edad: {
+                required: "<p class='text-danger'>Debe ingresar una edad</p>",
+                digits: "<p class='text-danger'>Ingrese números enteros</p>",
+                min: "<p class='text-danger'>Ingrese una edad válida</p>",
+                max: "<p class='text-danger'>Ingrese una edad válida</p>",
+            },
+            nombre: {
+                required: "<p class='text-danger'>Debe ingresar un nombre</p>",
+            },
+            apellido: {
+                required: "<p class='text-danger'>Debe ingresar un apellido</p>",
+            },
+            direccion: {
+                required: "<p class='text-danger'>Debe ingresar una dirección</p>",
+            },
+            estudios: {
+                required: "<p class='text-danger'>Seleccione una opción</p>",
+            },
             hsLunes: {
-                required: "<p class='text-danger'>Complete el campo.</p>",
-                min: "<p class='text-danger'>Ingrese horas válidas.</p>",
-                max: "<p class='text-danger'>Máximo 24 horas.</p>",
+                required: "<p class='text-danger'>Complete el campo</p>",
+                min: "<p class='text-danger'>Ingrese horas válidas</p>",
+                max: "<p class='text-danger'>Máximo 24 horas</p>",
             },
             hsMartes: {
-                required: "<p class='text-danger'>Complete el campo.</p>",
-                min: "<p class='text-danger'>Ingrese horas válidas.</p>",
-                max: "<p class='text-danger'>Máximo 24 horas.</p>",
+                required: "<p class='text-danger'>Complete el campo</p>",
+                min: "<p class='text-danger'>Ingrese horas válidas</p>",
+                max: "<p class='text-danger'>Máximo 24 horas</p>",
             },
             hsMiercoles: {
-                required: "<p class='text-danger'>Complete el campo.</p>",
-                min: "<p class='text-danger'>Ingrese horas válidas.</p>",
-                max: "<p class='text-danger'>Máximo 24 horas.</p>",
+                required: "<p class='text-danger'>Complete el campo</p>",
+                min: "<p class='text-danger'>Ingrese horas válidas</p>",
+                max: "<p class='text-danger'>Máximo 24 horas</p>",
             },
             hsJueves: {
-                required: "<p class='text-danger'>Complete el campo.</p>",
-                min: "<p class='text-danger'>Ingrese horas válidas.</p>",
-                max: "<p class='text-danger'>Máximo 24 horas.</p>",
+                required: "<p class='text-danger'>Complete el campo</p>",
+                min: "<p class='text-danger'>Ingrese horas válidas</p>",
+                max: "<p class='text-danger'>Máximo 24 horas</p>",
             },
             hsViernes: {
-                required: "<p class='text-danger'>Complete el campo.</p>",
-                min: "<p class='text-danger'>Ingrese horas válidas.</p>",
-                max: "<p class='text-danger'>Máximo 24 horas.</p>",
+                required: "<p class='text-danger'>Complete el campo</p>",
+                min: "<p class='text-danger'>Ingrese horas válidas</p>",
+                max: "<p class='text-danger'>Máximo 24 horas</p>",
             },
             usuario: {
-                required: "<p class='text-danger'>Campo requerido.</p>"
+                required: "<p class='text-danger'>Campo requerido</p>"
             },
             pass: {
-                required: "<p class='text-danger'>Campo requerido.</p>",
-                minlength: "<p class='text-danger'>La contraseña debe tener mínimo 8 caracteres.</p>",
-                distintoA: "<p class='text-danger'>La contraseña no debe coincidir con el nombre de usuario.</p>"
+                required: "<p class='text-danger'>Campo requerido</p>",
+                letrasNumeros: "<p class='text-danger'>Ingrese solo números y letras</p>",
+                minlength: "<p class='text-danger'>La contraseña debe tener mínimo 8 caracteres</p>",
+                distintoA: "<p class='text-danger'>La contraseña no debe coincidir con el nombre de usuario</p>"
             }
         },
-        // Esta función realiza el bootstrap de error
         highlight: function (element) {
             $(element).addClass('is-invalid');
             $(element).removeClass("is-valid");
+            $(element).css("border-color", "red");
         },
-        // Esta función realiza el bootstrap de exito
         unhighlight: function (element) {
             $(element).addClass('is-valid');
             $(element).removeClass("is-invalid");
-
-        },
-        // Esta función resalta el campo inválido cambiando el borde a rojo
-        highlight: function (element) {
-            $(element).css("border-color", "red");
-        },
-        // Esta función desmarca el borde rojo cuando el campo es válido
-        unhighlight: function (element) {
             $(element).css("border-color", "");
         },
         errorPlacement: function (error, element) {
-            // Inserta el mensaje de error en el contenedor específico
-            error.appendTo(element.closest('.form-floating').find('.mensaje-error'));
+            // Inserta el mensaje de error en el contenedor .mensaje-error
+            error.appendTo(element.closest('.mb-1').find('.mensaje-error'));
         }
     });
 });

@@ -11,18 +11,21 @@ include('../../Templates/head.php');
                         <h5 class="card-title text-center">Para calcular la tarifa ingrese los siguientes datos</h5>
                         <form name="form" id="form" method="post" action="formAccion.php">
                             <div class="form-group">
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="edad">Edad</label>
                                     <input class="form-control" type="number" id="edad" name="edad" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
+                                    <label class="fw-semibold" for="edad">Seleccione una opción</label>
+                                    <div class="mensaje-error"></div>
                                     <div class="form-check">
                                         <label for="estudia">Estudia</label>
-                                        <input class="form-check-input" type="radio" name="estudia" value="si" required>
+                                        <input class="form-check-input" type="radio" name="estudios" value="si" required>
                                     </div>
                                     <div class="form-check">
                                         <label for="estudia">No estudia</label>
-                                        <input class="form-check-input" type="radio" name="estudia" value="no" required>
+                                        <input class="form-check-input" type="radio" name="estudios" value="no" required>
                                     </div>
                                 </div>
                             </div>

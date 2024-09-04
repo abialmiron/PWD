@@ -12,14 +12,13 @@ class CalculaTarifa
     public function calcularTarifa($datos)
     {
         $edad = $datos['edad'];
-        $estudios = $datos['estudia'];
+        $estudios = $datos['estudios'];
 
         $tarifa = 300;
 
-        if ($estudios == "si") {
-            if ($edad < 12) {
-                $tarifa = 160;
-            } else {
+        if ($estudios == "si" || $edad < 12) {
+            $tarifa = 160;
+            if ($edad >= 12) {
                 $tarifa = 180;
             }
         }

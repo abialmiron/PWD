@@ -11,23 +11,27 @@ include('../../Templates/head.php');
                         <h5 class="card-title text-center">Ingrese sus datos personales</h5>
                         <form class="needs-validation" name="form" id="form" method="get" action="formAccion.php">
                             <div class="form-group">
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Nombre</label>
                                     <input class="form-control" type="text" name="nombre" id="nombre" minlength="2" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Apellido</label>
                                     <input class="form-control" type="text" name="apellido" id="apellido" minlength="2" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Edad</label>
                                     <input class="form-control" type="text" name="edad" id="edad" min="0" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="nombre">Dirección</label>
                                     <input class="form-control" type="text" name="direccion" id="direccion" required>
+                                    <div class="mensaje-error"></div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" class for="sexo">Sexo</label>
                                     <select class="form-select" id="sexo" name="sexo">
                                         <option value="masculino">Masculino</option>
@@ -35,8 +39,9 @@ include('../../Templates/head.php');
                                         <option value="otro">Otro</option>
                                     </select>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-1">
                                     <label class="fw-semibold" for="estudios">Nivel de estudios</label>
+                                    <div class="mensaje-error"></div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="estudios" id="estudios1" value="no tiene" required> No tiene
                                     </div>
