@@ -1,36 +1,42 @@
 <?php
 include('../../configuracion.php');
 include('../Templates/head.php');
-include_once '../../Control/Archivos.php';
+include('../../Control/SubirPdfDoc.php');
+
+//Obtengo los datos del formulario que encapsulé
+$archivoCargado = data_submitted();
+
+//Creo instancia del objeto y proceso los datos
+$objPdfDoc = new SubirPdfDoc();
+$resultado = $objPdfDoc->subir($archivoCargado);
+
 ?>
 <main class="index">
-  <div class="justify-content-md-center align-items-center p-4">
-    <div class="card shadow col-sm-8 col-md-6 col-lg-5 col-xl-4 mx-auto">
-      <div class="card-header">
-        <h3>Resultado</h3>
-      </div>
-      <div class="card-body">
-        <?php
-        $carga = "<h5>Recuerde ingresar documentos pdf o doc</h5>";
-        if ($_FILES["archivo"]["error"] <= 0) {
-          $datos = data_submitted();
-          $objControl = new Archivos();
-          $upload = $objControl->subirDoc($datos);
-          if ($upload) {
-            $carga = $objControl->cargar();
-          } else {
-            $carga = "<h5>Recuerde ingresar documentos pdf o doc</h5>";
-          }
-        }
-
-        ?>
-        <?php echo $carga ?>
-        <div class="form-group text-end mt-3">
-          <a href="form.php" class="btn btn-primary">Volver</a>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <div class="mb-1">
+              <?php echo $resultado['mensaje']; ?>
+            </div>
+            <div>
+              <?php
+              //Creo la dirección de la imagen hacia el directorio donde se encuentra
+              if ($resultado['pudo'] == 'si'):
+                $dir = "../uploads/";
+                $nombreArchivo = $archivoCargado['archivo']['name'];
+                $archivo = $dir . $nombreArchivo; ?>
+                <a href="<?php echo $archivo ?>">Visualizar</a>
+              <?php endif; ?>
+            </div>
+            <div class="text-center p2">
+              <br /><a class="btn btn-primary" href="form.php">Volver <a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </main>
 <?php

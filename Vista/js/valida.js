@@ -66,6 +66,9 @@ $(function () {
                 letrasNumeros: true,
                 minlength: 8,
                 distintoA: "#usuario"
+            },
+            archivo: {
+                required: true,
             }
         },
         //Mensajes de error
@@ -124,6 +127,9 @@ $(function () {
                 letrasNumeros: "<p class='text-danger'>Ingrese solo números y letras</p>",
                 minlength: "<p class='text-danger'>La contraseña debe tener mínimo 8 caracteres</p>",
                 distintoA: "<p class='text-danger'>La contraseña no debe coincidir con el nombre de usuario</p>"
+            },
+            archivo: {
+                required: "<p class='text-danger'>Suba un archivo</p>",
             }
         },
         highlight: function (element) {

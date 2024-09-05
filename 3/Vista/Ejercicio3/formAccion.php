@@ -1,44 +1,85 @@
 <?php
 include('../../configuracion.php');
 include('../Templates/head.php');
-include_once '../../Control/Archivos.php';
+include('../../Control/SubirJpgPng.php');
+
+//Obtengo los datos del formulario que encapsulé
+$datos = data_submitted();
+
+//Extraigo los datos individualmente
+$titulo = $datos['titulo'];
+$actores = $datos['actores'];
+$director = $datos['director'];
+$guion = $datos['guion'];
+$produccion = $datos['produccion'];
+$anio = $datos["anio"];
+$nacionalidad = $datos['nacionalidad'];
+$genero = $datos['genero'];
+$duracion = $datos['duracion'];
+$restriccion = $datos['restriccion'];
+$sinopsis = $datos['sinopsis'];
+
+//La imagen pasa por un control previo y se guarda en $imagen
+$objImagen = new SubirJpgPng();
+$imagen = $objImagen->generarImagen($datos['archivo']);
+
 ?>
 <main class="index">
-  <div class="justify-content-md-center align-items-center p-4">
-    <div class="card shadow  col-lg-8  mx-auto">
-      <div class="card-header">
-        <h3>Detalles de la pelicula</h3>
-      </div>
-      <div class="card-body">
-        <?php
-        if ($_FILES["archivo"]["error"] <= 0) {
-          $datos = data_submitted();
-          $objControl = new control_3;
-          $string = $objControl->informacion($datos);
-          $objArchivo = new Archivos();
-          $carga = $objArchivo->subirArchivo($datos);
-        }
-        ?>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Título:</strong> <?php echo $string['titulo']; ?></li>
-          <li class="list-group-item"><strong>Actores:</strong> <?php echo $string['actores']; ?></li>
-          <li class="list-group-item"><strong>Director:</strong> <?php echo $string['director']; ?></li>
-          <li class="list-group-item"><strong>Guión:</strong> <?php echo $string['guion']; ?></li>
-          <li class="list-group-item"><strong>Producción:</strong> <?php echo $string['produccion']; ?></li>
-          <li class="list-group-item"><strong>Año:</strong> <?php echo $string['anio']; ?></li>
-          <li class="list-group-item"><strong>Nacionalidad:</strong> <?php echo $string['nacionalidad']; ?></li>
-          <li class="list-group-item"><strong>Género:</strong> <?php echo $string['genero']; ?></li>
-          <li class="list-group-item"><strong>Duración:</strong> <?php echo $string['duracion']; ?> minutos</li>
-          <li class="list-group-item"><strong>Restricciones de Edad:</strong> <?php echo $string['restricciones']; ?></li>
-          <li class="list-group-item"><strong>Sinopsis:</strong> <?php echo $string['floatingTextarea2']; ?></li>
-          <li class="list-group-item"><strong>Imagen:<br></strong><?php echo $carga ?></li>
-        </ul>
-        <div class="d-flex justify-content-end">
-          <a href="form.php" class="btn btn-primary">Volver</a>
+  <div class="container p-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body d-flex">
+            <link rel='stylesheet' href='../estructura/css/bootstrap-5.3.3-dist/css/bootstrap.min.css'>
+            <div class='container mt-4'>
+              <div class='card p-4' style='background-color: #D8F1CF'>
+                <div class='fs-2 text-primary'>
+                  La película introducida es
+                </div>
+                </br>
+                <div class='text-success'>
+                  <span class='fw-bold'>Título:</span> <?php echo $titulo ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Actores:</span> <?php echo $actores ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Director:</span> <?php echo $director ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Guión:</span><?php echo $guion ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Producción:</span><?php echo $produccion ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Año:</span> <?php echo $anio ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Nacionalidad:</span> <?php echo $nacionalidad ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Género:</span> <?php echo $genero ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Duración:</span> <?php echo $duracion ?>
+                </div>
+                <div class='text-success'>
+                  <span class='fw-bold'>Restricciones de edad:</span> <?php echo $restriccion ?>
+                </div>
+                <div class='text-success'><span class='fw-bold'>Sinópsis:</span> <?php echo $sinopsis ?>
+                </div>
+                <div class='text-success'><span class='fw-bold'>Imagen:</span> <img src="<?php echo $imagen; ?>" class="img-fluid mt-3">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mb-3">
+            <br /><a class="btn btn-primary" href="form.php">Volver <a>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </main>
 <?php

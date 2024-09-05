@@ -127,9 +127,9 @@ include('../Templates/head.php');
                         <div class="form-group mb-3" id="sinopsis">
                             <label class="form-label fw-medium">Sinópsis</label>
                             <textarea class="form-control" id="sinopsis" rows="3" name="sinopsis" required></textarea>
-                        </div>
-                        <div class="invalid-feedback">
-                            Campo requerido.
+                            <div class="invalid-feedback">
+                                Campo requerido.
+                            </div>
                         </div>
                     </div>
 

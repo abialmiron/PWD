@@ -10,12 +10,14 @@ include('../Templates/head.php');
                 <h3>Subir archivo (solo .doc/.pdf)</h3>
             </div>
             <div class="card-body">
-                <form action="./formAccion.php" id="form" method="post" enctype="multipart/form-data" class="input-group" onsubmit="return validarArchivo()">
-                    <input type="file" class="form-control" id="archivo" name="archivo">
-                    <div class="invalid-feedback">
-                        Por favor, debe ingresar un archivo JPG.
+                <form action="formAccion.php" id="form" method="post" enctype="multipart/form-data">
+                    <div class="mb-1">
+                        <input id="archivo" name="archivo" class="form-control" type="file" required>
+                        <div class="mensaje-error"></div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Subir Archivo</button>
+                    <div class="mt-2">
+                        <input class="btn btn-primary" type="submit" id="submit" value="Subir archivo">
+                    </div>
                 </form>
             </div>
         </div>
