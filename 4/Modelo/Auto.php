@@ -21,6 +21,14 @@
             $this->setObjDuenio($duenio);
         }
 
+        public function setId ($patente){
+            $this->setPatente($patente);
+            $this->marca = "";
+            $this->modelo = "";
+            $this->objDuenio = new Persona();
+            $this->msjeOperacion = "";
+        }
+
         // Metodos GET
         public function getPatente(){
             return $this->patente;
@@ -85,7 +93,7 @@
             return $resp;
         }
 
-        public function listar ($condicion = ""){
+        public static function listar ($condicion = ""){
             $array = [];
             $base = new BaseDatos();
             $sql = "SELECT * FROM auto";

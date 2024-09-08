@@ -27,6 +27,16 @@
             $this->setDomicilio($domicilio);
         }
 
+        public function setId ($nroDni){
+            $this->setNroDni($nroDni);
+            $this->apellido = "";
+            $this->nombre = "";
+            $this->fechaNacimiento = "";
+            $this->tel = "";
+            $this->domicilio = "";
+            $this->msjeOperacion = "";
+        }
+
         // Metodos GET
         public function getNroDni(){
             return $this->nroDni;
@@ -105,7 +115,7 @@
             return $resp;
         }
 
-        public function listar($condicion = ""){
+        public static function  listar($condicion = ""){
             $arreglo = [];
             $base = new BaseDatos();
             $sql = "SELECT * FROM persona";
