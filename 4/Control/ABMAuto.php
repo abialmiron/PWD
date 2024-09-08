@@ -13,7 +13,7 @@ Class ABMAuto{
         if( array_key_exists('patente',$param) && array_key_exists('marca',$param) && array_key_exists('modelo',$param) && array_key_exists('nroDNI',$param)){
             $obj = new Auto();
             $objPersona = new ABMPersona();
-            $objPersona->cargarObjetoSoloID($param);
+            $this->cargarObjetoSoloID($param);
             $obj->cargar($param['patente'], $param['marca'],$param['modelo'],$objPersona); 
         }
         return $obj;
@@ -108,12 +108,12 @@ Class ABMAuto{
      * @return boolean
      */
     
-     public function buscar($param){
+    public function buscar($param){
         $where = " true ";
-        if ($param<>NULL){
+        if ($param != NULL){
             if  (isset($param['patente']))
             $where.=" and Patente='".$param['patente']."'";
-            if  (isset($param['nombre']))
+            if  (isset($param['marca']))
             $where.=" and Marca ='".$param['marca']."'";
             if  (isset($param['modelo']))
             $where.=" and Modelo ='".$param['modelo']."'";

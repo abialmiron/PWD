@@ -98,12 +98,11 @@
             $base = new BaseDatos();
             $sql = "SELECT * FROM auto";
             if($condicion != ""){
-                $sql .= 'WHERE ' . $condicion;
+                $sql .= ' WHERE ' . $condicion;
             }
 
             $res = $base->ejecutar($sql);
-            if ($res >-1){
-                if($res > 0){
+            if ($res !== false){
                     while ($row = $base->Registro()){
                         $obj = new Auto();
                         $objDuenio = new Persona();
@@ -111,7 +110,6 @@
                         $obj->cargar($row['Patente'], $row['Marca'], $row['Modelo'], $objDuenio);
                         $array [] = $obj;
                     }
-                }
             } else {
                 $this->setMsjeOperacion("auto->listar: " . $base->getError());
             }
