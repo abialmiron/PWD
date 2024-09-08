@@ -20,7 +20,7 @@ Class ABMAuto{
     }
 
     /**
-     * Espera como parametro un arreglo asociativo donde las claves coinciden con el ID del OBJ compra.
+     * Espera como parametro un arreglo asociativo donde las claves coinciden con el ID del OBJ auto.
      * Se utiliza para cargar un OBJ a partir de un ID.
      * @param array $param
      * @return object
@@ -69,7 +69,7 @@ Class ABMAuto{
     }
 
     /**
-     * Realiza la eliminación de una compra.
+     * Realiza la eliminación de un auto.
      * @param array $param
      * @return boolean
      */

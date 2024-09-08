@@ -18,7 +18,7 @@ Class ABMPersona{
     }
 
     /**
-     * Espera como parametro un arreglo asociativo donde las claves coinciden con el ID del OBJ compra.
+     * Espera como parametro un arreglo asociativo donde las claves coinciden con el ID del OBJ persona.
      * Se utiliza para cargar un OBJ a partir de un ID.
      * @param array $param
      * @return object
@@ -67,7 +67,7 @@ Class ABMPersona{
     }
 
     /**
-     * Realiza la eliminación de una compra.
+     * Realiza la eliminación de una persona.
      * @param array $param
      * @return boolean
      */
