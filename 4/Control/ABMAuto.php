@@ -48,8 +48,25 @@ class AbmAuto
         $obj = null;
 
         if (isset($param['patente'])) {
+            $obj = $this->buscar($param['patente']);
+        }
+        return $obj;
+    }
+
+    /**
+     * Espera como parametro un arreglo asociativo solo se tendrá cuenta el ID
+     * que luego verificará que este cargado en la BD
+     * 
+     * @param array $param
+     * @return Auto
+     */
+    private function cargarObjetoConID($param)
+    {
+        $obj = null;
+
+        if (isset($param['patente'])) {
             $obj = new Auto();
-            $obj->setear($param['patente'], null, null, null);
+            $obj = $this->buscar($param['patente']);
         }
         return $obj;
     }
@@ -187,4 +204,31 @@ class AbmAuto
         }
         return $colInfo;
     }
+
+    
+    /**
+     * Cambia el dueño de un auto.
+     * @param array $param
+     * @return boolean
+     */
+    public function cambiaDuenio($param){
+        $resp = 1;
+        if ($this->seteadosCamposClaves($param)){
+            $objPersona = new ABMPersona();
+            $param['nroDni'] =  $param['dniduenio'];
+            $objPersona = $objPersona->buscar($param);
+            if ($objPersona <> null){
+                $objAuto = $this->cargarObjetoConID($param);
+                $objAuto->setObjPersona($objPersona);
+                if($objAuto !=null && $objAuto->modificar()){
+                    $resp = 0;
+                } else {
+                    $resp = 2;
+                }
+        } else {
+            $resp = 3;
+        }
+    }
+    return $resp;
+}
 }
