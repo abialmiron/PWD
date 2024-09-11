@@ -1,0 +1,17 @@
+form {
+    max-width: 250px;
+}
+
+.datosPersonales {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.datosEstudios {
+    margin-bottom: 10px;
+}
+
+#submit {
+    border-radius: 4px;
+}

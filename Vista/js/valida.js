@@ -3,9 +3,17 @@ $.validator.addMethod("distintoA", function (value, element, param) {
     return this.optional(element) || value !== $(param).val();
 });
 
+// Método personalizado para verificar que el input solo contenga letras y números
 $.validator.addMethod("letrasNumeros", function (value, element) {
     return this.optional(element) || /^[a-zA-Z0-9]+$/.test(value);
 });
+
+// Método personalizado para verificar que el input respete el formato de fecha (AAAA-MM-DD)
+$.validator.addMethod("formatoFecha", function (value, element) {
+    return this.optional(element) || /^\d{4}-\d{2}-\d{2}$/.test(value);
+});
+
+console.log("entra");
 
 $(function () {
 
@@ -23,9 +31,11 @@ $(function () {
             },
             nombre: {
                 required: true,
+                maxlength: 50,
             },
             apellido: {
                 required: true,
+                maxlength: 50,
             },
             direccion: {
                 required: true,
@@ -69,6 +79,42 @@ $(function () {
             },
             archivo: {
                 required: true,
+            },
+            patente: {
+                required: true,
+                maxlength: 10,
+            },
+            dniDuenio: {
+                required: true,
+                digits: true,
+                maxlength: 10,
+            },
+            nroDni: {
+                required: true,
+                digits: true,
+                maxlength: 10,
+            },
+            fechaNac: {
+                required: true,
+                formatoFecha: true,
+            },
+            telefono: {
+                required: true,
+                digits: true,
+                maxlength: 20,
+            },
+            domicilio: {
+                required: true,
+                maxlength: 200,
+            },
+            marca: {
+                required: true,
+                maxlength: 50,
+            },
+            modelo: {
+                required: true,
+                digits: true,
+                maxlength: 11,
             }
         },
         //Mensajes de error
@@ -84,9 +130,11 @@ $(function () {
             },
             nombre: {
                 required: "<p class='text-danger'>Debe ingresar un nombre</p>",
+                maxlength: "<p class='text-danger'>Máximo 50 caracteres</p>",
             },
             apellido: {
                 required: "<p class='text-danger'>Debe ingresar un apellido</p>",
+                maxlength: "<p class='text-danger'>Máximo 50 caracteres</p>",
             },
             direccion: {
                 required: "<p class='text-danger'>Debe ingresar una dirección</p>",
@@ -130,6 +178,42 @@ $(function () {
             },
             archivo: {
                 required: "<p class='text-danger'>Suba un archivo</p>",
+            },
+            patente: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                maxlength: "<p class='text-danger'>Máximo 10 caracteres</p>",
+            },
+            dniDuenio: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                digits: "<p class='text-danger'>Ingrese números</p>",
+                maxlength: "<p class='text-danger'>Máximo 10 números</p>",
+            },
+            nroDni: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                digits: "<p class='text-danger'>Ingrese solo números</p>",
+                maxlength: "<p class='text-danger'>Máximo 10 números</p>",
+            },
+            fechaNac: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                formatoFecha: "<p class='text-danger'>Respete el formato AAAA-MM-DD</p>",
+            },
+            telefono: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                digits: "<p class='text-danger'>Ingrese solo números</p>",
+                maxlength: "<p class='text-danger'>Máximo 20 números</p>",
+            },
+            domicilio: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                maxlength: "<p class='text-danger'>Máximo 200 caracteres</p>",
+            },
+            marca: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                maxlength: "<p class='text-danger'>Máximo 50 caracteres</p>",
+            },
+            modelo: {
+                required: "<p class='text-danger'>Campo requerido</p>",
+                digits: "<p class='text-danger'>Ingrese solo números</p>",
+                maxlength: "<p class='text-danger'>Máximo 11 números</p>",
             }
         },
         highlight: function (element) {

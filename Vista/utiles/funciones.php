@@ -43,7 +43,8 @@ spl_autoload_register(
         $tps = array(
             $GLOBALS['ROOT'] . '1/',
             $GLOBALS['ROOT'] . '2/',
-            $GLOBALS['ROOT'] . '3/'
+            $GLOBALS['ROOT'] . '3/',
+            $GLOBALS['ROOT'] . '4/'
 
         );
         $directorys = array(
