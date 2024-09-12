@@ -49,7 +49,7 @@ if (count($colAutos) > 0) {
                                     <td><?php echo $patente ?></td>
                                     <td><?php echo $marca ?></td>
                                     <td><?php echo $modelo ?></td>
-                                    <td><?php echo $dni ?></td>
+                                    <td><?php echo $dniDuenio ?></td>
                                     <td><?php echo $apellido ?></td>
                                     <td><?php echo $nombre ?></td>
                                 </tr>

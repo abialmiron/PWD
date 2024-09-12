@@ -55,6 +55,28 @@ class AbmPersona
     }
 
     /**
+     * Espera como parametro un arreglo asociativo solo se tendrá cuenta el ID
+     * que luego verificará que este cargado en la BD
+     * 
+     * @param array $param
+     * @return Persona
+     */
+    private function cargarObjetoConID($param)
+    {
+        $obj = null;
+
+        if (isset($param['nroDni'])) {
+            $paramPersona['nroDni'] = $param['nroDni'];
+            if ($colPersonas = $this->buscar($paramPersona)) {
+                $obj = $colPersonas[0];
+            }
+        }
+
+        return $obj;
+    }
+
+
+    /**
      * Corrobora que dentro del arreglo asociativo estan seteados los campos claves
      * @param array $param
      * @return boolean

@@ -48,7 +48,8 @@ class AbmAuto
         $obj = null;
 
         if (isset($param['patente'])) {
-            $obj = $this->buscar($param['patente']);
+            $colObjetos = $this->buscar($param);
+            $obj = $colObjetos[0];
         }
         return $obj;
     }
@@ -65,9 +66,12 @@ class AbmAuto
         $obj = null;
 
         if (isset($param['patente'])) {
-            $obj = new Auto();
-            $obj = $this->buscar($param['patente']);
+            $paramAuto['patente'] = $param['patente'];
+            if ($colAutos = $this->buscar($paramAuto)) {
+                $obj = $colAutos[0];
+            }
         }
+
         return $obj;
     }
 
@@ -81,6 +85,7 @@ class AbmAuto
         $resp = false;
         if (isset($param['patente']))
             $resp = true;
+
         return $resp;
     }
 
@@ -205,30 +210,37 @@ class AbmAuto
         return $colInfo;
     }
 
-    
+
     /**
      * Cambia el dueño de un auto.
      * @param array $param
      * @return boolean
      */
-    public function cambiaDuenio($param){
+    public function cambiaDuenio($param)
+    {
         $resp = 1;
-        if ($this->seteadosCamposClaves($param)){
+
+        if ($this->seteadosCamposClaves($param)) {
             $objPersona = new ABMPersona();
-            $param['nroDni'] =  $param['dniduenio'];
-            $objPersona = $objPersona->buscar($param);
-            if ($objPersona <> null){
-                $objAuto = $this->cargarObjetoConID($param);
-                $objAuto->setObjPersona($objPersona);
-                if($objAuto !=null && $objAuto->modificar()){
-                    $resp = 0;
-                } else {
-                    $resp = 2;
+            $param['nroDni'] =  $param['dniDuenio'];
+            $colPersonas = $objPersona->buscar($param);
+
+            if (count($colPersonas) > 0) {
+
+                $paramAuto['patente'] = $param['patente'];
+                $objAuto = $this->cargarObjetoConID($paramAuto);
+                if ($objAuto) {
+                    $objAuto->setObjPersona($colPersonas[0]);
+                    if ($objAuto != null && $objAuto->modificar()) {
+                        $resp = 0;
+                    } else {
+                        $resp = 2;
+                    }
                 }
-        } else {
-            $resp = 3;
+            } else {
+                $resp = 3;
+            }
         }
+        return $resp;
     }
-    return $resp;
-}
 }

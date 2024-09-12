@@ -93,7 +93,7 @@ include('Vista/Templates/head.php');
           <p class="card-text"> Crear una página “CambioDuenio.php” que contenga un formulario en donde se solicite el
             numero de patente de un auto y un numero de documento de una persona, enviar datos a página “accionCambioDuenio.php” en
             donde se realice cambio del dueño del auto de la patente ingresada en el formulario.</p>
-          <a href="Vista/ejercicio8/cambioDuenio.php" class="btn btn-primary btn-primaryMod">Ver</a>
+          <a href="Vista/ejercicio8/CambiarDuenio.php" class="btn btn-primary btn-primaryMod">Ver</a>
         </div>
       </div>
     </div>
