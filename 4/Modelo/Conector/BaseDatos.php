@@ -31,7 +31,7 @@ class BaseDatos extends PDO
             parent::__construct($dns, $this->user, $this->pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
             $this->conec = true;
         } catch (PDOException $e) {
-            $this->sql = $e->getMessage();
+            $this->setError($e->getMessage()); // Usar el setError para registrar el error
             $this->conec = false;
         }
     }

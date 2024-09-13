@@ -13,7 +13,16 @@ $.validator.addMethod("formatoFecha", function (value, element) {
     return this.optional(element) || /^\d{4}-\d{2}-\d{2}$/.test(value);
 });
 
-console.log("entra");
+// Método personalizado para verificar que el input respete el formato de teléfono (000-000000...)
+jQuery.validator.addMethod("formatoTelefono", function (value, element) {
+    return this.optional(element) || /^(\d{3})-(\d{1,16})$/.test(value);
+});
+
+// Método personalizado para verificar que el input de teléfono solo permita ingresar números y guión alto
+jQuery.validator.addMethod("caracteresPermitidos", function (value, element) {
+    return this.optional(element) || /^[\d-]+$/.test(value);
+});
+
 
 $(function () {
 
@@ -100,8 +109,9 @@ $(function () {
             },
             telefono: {
                 required: true,
-                digits: true,
                 maxlength: 20,
+                formatoTelefono: true,
+                caracteresPermitidos: true,
             },
             domicilio: {
                 required: true,
@@ -199,8 +209,9 @@ $(function () {
             },
             telefono: {
                 required: "<p class='text-danger'>Campo requerido</p>",
-                digits: "<p class='text-danger'>Ingrese solo números</p>",
                 maxlength: "<p class='text-danger'>Máximo 20 números</p>",
+                formatoTelefono: "<p class='text-danger'>Por favor, ingresa un número de teléfono en el formato xxx-xxxxx...</p>",
+                caracteresPermitidos: "<p class='text-danger'>Ingrese un número de teléfono válido</p>",
             },
             domicilio: {
                 required: "<p class='text-danger'>Campo requerido</p>",
