@@ -5,12 +5,21 @@ include('../../Templates/head.php');
 // Carga el controlador
 $abmPersona = new ABMPersona();
 $datos = data_submitted();
-
-// Intenta modificar los datos en la base de datos
-if ($abmPersona->modificacion($datos)) {
-    $mensaje = "Los datos fueron actualizados correctamente.";
+if (
+    $datos['apellido'] == $datos['original_apellido'] &&
+    $datos['nombre'] == $datos['original_nombre'] &&
+    $datos['fechaNac'] == $datos['original_fechaNac'] &&
+    $datos['telefono'] == $datos['original_telefono'] &&
+    $datos['domicilio'] == $datos['original_domicilio']
+) {
+    $mensaje = "Los datos ingresados son los mismos que ya están en la base de datos.";
 } else {
-    $mensaje = "Error al actualizar los datos.";
+// Intenta modificar los datos en la base de datos
+    if ($abmPersona->modificacion($datos)) {
+        $mensaje = "Los datos fueron actualizados correctamente.";
+    } else {
+        $mensaje = "Error al actualizar los datos.";
+    }
 }
 ?>
 <main class="index">
