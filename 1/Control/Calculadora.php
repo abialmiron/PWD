@@ -24,10 +24,10 @@ class Calculadora
                 $resultado = $num1 * $num2;
                 break;
             case "division":
-                if ($num2 != 0) {
+                if ($num1 != 0 && $num2 != 0) {
                     $resultado = $num1 / $num2;
                 } else {
-                    $resultado = "[Error, no es posible dividir por 0]";
+                    $resultado = "[Error, no es posible realizar diviciones con 0]";
                 }
                 break;
         }

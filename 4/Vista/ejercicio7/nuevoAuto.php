@@ -64,7 +64,7 @@ if (count($colAutos) > 0) {
                 <form id="form" name="form" method="post" action="./accion/accionNuevoAuto.php">
                     <div class="mb-1">
                         <label for="patente" class="form-label fw-semibold">Patente</label>
-                        <input type="text" id="patente" name="patente" class="form-control" required>
+                        <input type="text" id="patente" name="patente" class="form-control" placeholder="AAA 111" required>
                         <div class="mensaje-error"></div>
                     </div>
                     <div class="mb-1">
@@ -79,7 +79,7 @@ if (count($colAutos) > 0) {
                     </div>
                     <div class="mb-1">
                         <label for="dniDuenio" class="form-label fw-semibold">DNI dueño</label>
-                        <input type="number" id="dniDuenio" name="dniDuenio" class="form-control" required>
+                        <input type="text" id="dniDuenio" name="dniDuenio" class="form-control" required>
                         <div class="mensaje-error"></div>
                     </div>
                     <div class="mt-2">

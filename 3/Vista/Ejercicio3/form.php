@@ -1,7 +1,7 @@
 <?php
 include('../../configuracion.php');
 include('../Templates/head.php');
-include('../../Control/control_3.php');
+include('../../Control/SubirJpgPng.php');
 ?>
 <main class="index">
 	<div class="container p-2">

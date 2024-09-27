@@ -62,7 +62,7 @@ if (count($colPersonas) > 0) {
                 <form id="form" name="form" method="post" action="./accion/accionNuevaPersona.php">
                     <div class="mb-1">
                         <label for="nroDni" class="form-label fw-semibold">Número DNI</label>
-                        <input type="number" id="nroDni" name="nroDni" class="form-control" required>
+                        <input type="text" id="nroDni" name="nroDni" class="form-control" required>
                         <div class="mensaje-error"></div>
                     </div>
                     <div class="mb-1">
@@ -82,7 +82,7 @@ if (count($colPersonas) > 0) {
                     </div>
                     <div class="mb-1">
                         <label for="telefono" class="form-label fw-semibold">Teléfono</label>
-                        <input type="number" id="telefono" name="telefono" class="form-control" required>
+                        <input type="text" id="telefono" name="telefono" class="form-control" required>
                         <div class="mensaje-error"></div>
                     </div>
                     <div class="mb-1">

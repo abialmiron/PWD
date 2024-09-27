@@ -26,7 +26,7 @@ if (count($colAutos) > 0) {
                     <form id="form" name="form" method="post" action="./accion/accionBuscarAuto.php">
                         <div class="mb-1">
                             <label for="patente" class="form-label fw-semibold">Ingrese número de patente</label>
-                            <input type="text" id="patente" name="patente" class="form-control">
+                            <input type="text" id="patente" name="patente" class="form-control" placeholder="AAA 111">
                             <div class="mensaje-error"></div>
                         </div>
                         <div class="mt-2">

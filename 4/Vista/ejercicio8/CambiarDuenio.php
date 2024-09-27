@@ -14,7 +14,7 @@ include('../Templates/head.php');
                             <div class="form-group">
                                 <div class="mb-1">
                                     <label class="fw-semibold" for="patente" class="form-label">Patente</label>
-                                    <input class="form-control" type="text" name="patente" id="patente" required>
+                                    <input class="form-control" type="text" name="patente" id="patente" placeholder="AAA 111" required>
                                     <div class="mensaje-error"></div>
                                 </div>
                                 <div class="mb-1">

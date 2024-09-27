@@ -14,7 +14,7 @@ include('../Templates/head.php');
                             <div class="form-group">
                                 <div class="mb-1">
                                     <label for="nroDni" class="form-label fw-semibold">Número DNI</label>
-                                    <input type="number" id="nroDni" name="nroDni" class="form-control" required>
+                                    <input type="text" id="nroDni" name="nroDni" class="form-control" required>
                                     <div class="mensaje-error"></div>
                                 </div>
                             </div>

@@ -26,7 +26,7 @@ if (count($colAutos) > 0) {
                     <form id="form" name="form" method="post" action="./accion/accionAutosAsociados.php">
                         <div class="mb-1">
                             <label for="nroDni" class="form-label fw-semibold">Ingrese número de DNI</label>
-                            <input type="number" id="nroDni" name="nroDni" class="form-control" required>
+                            <input type="text" id="nroDni" name="nroDni" class="form-control" required>
                             <div class="mensaje-error"></div>
                         </div>
                         <div class="mt-2">
