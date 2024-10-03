@@ -1,6 +1,6 @@
 <?php
 include('../../../configuracion.php');
-include('../../Templates/head.php');
+include('../../Estructura/head.php');
 $objAuto = new ABMAuto();
 $datos = data_submitted();
 $resp = $objAuto->cambiaDuenio($datos);
@@ -38,5 +38,5 @@ switch ($resp) {
 </main>
 
 <?php
-include('../../Templates/footer.php');
+include('../../Estructura/footer.php');
 ?>

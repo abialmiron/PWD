@@ -1,6 +1,6 @@
 <?php
 include('../../configuracion.php');
-include('../Templates/head.php');
+include('../Estructura/head.php');
 
 //Creo instancia del objeto AbmAuto y accedo al método correspondiente
 $objAuto = new AbmAuto();
@@ -40,4 +40,4 @@ if (count($colAutos) > 0) {
         </div>
     </div>
 </main>
-<?php include('../Templates/footer.php'); ?>
+<?php include('../Estructura/footer.php'); ?>

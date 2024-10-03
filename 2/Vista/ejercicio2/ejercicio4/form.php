@@ -1,6 +1,6 @@
 <?php
 include('../../../configuracion.php');
-include('../../Templates/head.php');
+include('../../Estructura/head.php');
 ?>
 <main class="index">
     <div class="container mt-5">
@@ -44,5 +44,5 @@ include('../../Templates/head.php');
 </main>
 
 <?php
-include('../../Templates/footer.php');
+include('../../Estructura/footer.php');
 ?>

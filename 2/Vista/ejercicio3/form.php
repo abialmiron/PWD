@@ -1,6 +1,6 @@
 <?php
 include('../../configuracion.php');
-include('../Templates/head.php');
+include('../Estructura/head.php');
 ?>
 <main class="index">
     <form name="form" id="form" method="post" action="formAccion.php">
@@ -37,5 +37,5 @@ include('../Templates/head.php');
     <script type="text/javascript" src="../estructura/js/validaciones/ejercicio3.js"></script>
 </main>
 <?php
-include('../Templates/footer.php');
+include('../Estructura/footer.php');
 ?>

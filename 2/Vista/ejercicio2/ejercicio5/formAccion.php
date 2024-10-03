@@ -1,6 +1,6 @@
 <?php
 include('../../../configuracion.php');
-include('../../Templates/head.php');
+include('../../Estructura/head.php');
 
 //Obtengo los datos del formulario que encapsulé
 $datos = data_submitted();
@@ -42,5 +42,5 @@ $estudios = $cadenaDatos['estudios'];
     </div>
 </main>
 <?php
-include('../../Templates/footer.php');
+include('../../Estructura/footer.php');
 ?>

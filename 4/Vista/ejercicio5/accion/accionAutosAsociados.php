@@ -1,6 +1,6 @@
 <?php
 include('../../../configuracion.php');
-include('../../Templates/head.php');
+include('../../Estructura/head.php');
 
 //Extraigo datos del formulario
 $datos = data_submitted();
@@ -102,4 +102,4 @@ if (count($colPersonas) > 0) {
         </div>
     </div>
 </main>
-<?php include('../../Templates/footer.php'); ?>
+<?php include('../../Estructura/footer.php'); ?>

@@ -1,6 +1,6 @@
 <?php
 include('configuracion.php');
-include('Vista/Templates/head.php');
+include('Vista/Estructura/head.php');
 ?>
 
 <main class="index">
@@ -51,5 +51,5 @@ include('Vista/Templates/head.php');
 </main>
 
 <?php
-include('Vista/Templates/footer.php');
+include('Vista/Estructura/footer.php');
 ?>

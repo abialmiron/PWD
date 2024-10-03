@@ -1,6 +1,6 @@
 <?php
 include('../../configuracion.php');
-include('../Templates/head.php');
+include('../Estructura/head.php');
 ?>
 <main class="index">
     <div class="container p-2">
@@ -149,5 +149,5 @@ include('../Templates/head.php');
     <script type="text/javascript" src="../estructura/js/validaciones/ejercicio4.js"></script>
 </main>
 <?php
-include('../Templates/footer.php');
+include('../Estructura/footer.php');
 ?>

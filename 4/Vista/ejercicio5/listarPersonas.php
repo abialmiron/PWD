@@ -1,6 +1,6 @@
 <?php
 include('../../configuracion.php');
-include('../Templates/head.php');
+include('../Estructura/head.php');
 
 //Creo instancia del objeto AbmPersona y accedo al método correspondiente
 $objPersona = new AbmPersona();
@@ -61,4 +61,4 @@ if (count($colPersonas) > 0) {
         </div>
     </div>
 </main>
-<?php include('../Templates/footer.php'); ?>
+<?php include('../Estructura/footer.php'); ?>
